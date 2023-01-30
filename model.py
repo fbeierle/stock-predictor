@@ -46,8 +46,8 @@ def predict(ticker="MSFT", days=7):
 
     forecast = model.predict(df)
 
-    model.plot(forecast).savefig(f"{ticker}_plot.png")
-    model.plot_components(forecast).savefig(f"{ticker}_plot_components.png")
+    #model.plot(forecast).savefig(f"{ticker}_plot.png")
+    #model.plot_components(forecast).savefig(f"{ticker}_plot_components.png")
 
     return forecast.tail(days).to_dict("records")
 
@@ -59,6 +59,7 @@ def convert(prediction_list):
     return output
 
 
+'''
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Predict')
     parser.add_argument('--ticker', type=str, default='MSFT', help='Stock Ticker')
@@ -69,3 +70,4 @@ if __name__ == "__main__":
     prediction_list = predict(ticker=args.ticker, days=args.days)
     output = convert(prediction_list)
     print(output)
+'''

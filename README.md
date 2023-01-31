@@ -1,7 +1,18 @@
 # stock-predictor
 Stock price prediction - simple model, deployed to server.
 
-Because I couldn't launch instances via the Fourthbrain AWS account, I deployed the model on another server. To get predictions, use:
+While it was running on an EC2 AWS instance, the command to query for stock forecasts was:
+
+```
+curl \
+--header "Content-Type: application/json" \
+--request POST \
+--data '{"ticker":"MSFT", "days":7}' \
+http://52.32.189.64:8000/predict
+```
+
+
+I also deployed the stock predictor on another server, that should still be online (2023-01-31):
 
 ```
 curl \
